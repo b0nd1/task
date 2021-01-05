@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+  <title>Task</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="model">
+      <p>{{ model }}</p>
+      <p> На сколько процентов А.М. лучший? {{ counter }} %</p>
+      <button v-on:click="counter += 100">+100</button>
+
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        model: '',
+        counter: 0
+      }
+    })
+  </script>
+</body>
+</html>
