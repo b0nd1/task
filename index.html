@@ -11,15 +11,29 @@
       <p>{{ model }}</p>
       <p> На сколько процентов А.М. лучший? {{ counter }} %</p>
       <button v-on:click="counter += 100">+100</button>
+    <hr/>
+    <form class="login" @submit.prevent="login">
+     <h1>Чтобы получить бесплатный курс</h1>
+      <h2>программирования на Python, заполни форму.</h2>
+
+      <label>Имя</label>
+      <input required v-model="name" id="myText" type="text" placeholder="Ваше имя"/>
+     <label>Email</label>
+     <input required v-model="email" id="myEmail" type="email" placeholder="Почта"/>
+     <hr/>
+     <button onclick="">Получить</button>
+
+   </form>
 
   </div>
 
   <script>
-    var app = new Vue({
+
+     var app = new Vue({
       el: '#app',
       data: {
         model: '',
-        counter: 0
+        counter: 100
       }
     })
   </script>
