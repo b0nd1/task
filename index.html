@@ -4,6 +4,7 @@
 <head>
   <title>Task</title>
   <script src="https://unpkg.com/vue"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 </head>
 <body>
   <div id="app">
@@ -15,13 +16,19 @@
     <form class="login" @submit.prevent="login">
      <h1>Чтобы получить бесплатный курс</h1>
       <h2>программирования на Python, заполни форму.</h2>
-
       <label>Имя</label>
-      <input required v-model="name" id="myText" type="text" placeholder="Ваше имя"/>
+      <input required v-model="name" onkeyup="checkParams()" id="fname" type="text" placeholder="Ваше имя"/>
+
+    <label for="age">Возраст</label>
+    <input type="number" onkeyup="checkParams()" name="age"  id="age" v-model="age" min="0">
+
      <label>Email</label>
-     <input required v-model="email" id="myEmail" type="email" placeholder="Почта"/>
+     <input required v-model="email" onkeyup="checkParams()"  id="email" type="email" placeholder="Почта"/>
      <hr/>
-     <button onclick="">Получить</button>
+<div id="app">
+     <button id="sumbit" @click="getMessage">Получить</button>
+
+</div>
 
    </form>
 
@@ -33,9 +40,22 @@
       el: '#app',
       data: {
         model: '',
-        counter: 100
-      }
+        counter: 100,
+        name: '',
+        email: ''
+
+      },
+       methods: {
+     
+    getMessage () {
+      alert('Здравствуйте, '+ this.name+'!'+ ' На Вашу почту '+ this.email+', отправлен бесплатный курс программирования.')
+    }
+  }
     })
+
+
   </script>
+
+
 </body>
 </html>
