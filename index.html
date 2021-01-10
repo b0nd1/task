@@ -1,61 +1,29 @@
-<!DOCTYPE html>
-<meta charset="UTF-8">
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Task</title>
-  <script src="https://unpkg.com/vue"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Clean URL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
+
+
 <body>
-  <div id="app">
-    <input type="text" v-model="model">
-      <p>{{ model }}</p>
-      <p> На сколько процентов А.М. лучший? {{ counter }} %</p>
-      <button v-on:click="counter += 100">+100</button>
-    <hr/>
-    <form class="login" @submit.prevent="login">
-     <h1>Чтобы получить бесплатный курс</h1>
-      <h2>программирования на Python, заполни форму.</h2>
-      <label>Имя</label>
-      <input required v-model="name" onkeyup="checkParams()" id="fname" type="text" placeholder="Ваше имя"/>
 
-    <label for="age">Возраст</label>
-    <input type="number" onkeyup="checkParams()" name="age"  id="age" v-model="age" min="0">
-
-     <label>Email</label>
-     <input required v-model="email" onkeyup="checkParams()"  id="email" type="email" placeholder="Почта"/>
-     <hr/>
 <div id="app">
-     <button id="sumbit" @click="getMessage">Получить</button>
+  <div class="container">
+      <h2>Убрать из адреса "https" 👇🏼</h2>
+      <h1>URL:<a v-bind:href="url"> {{cleanUrl}}</a></h1>
+      <input type="text" class="form-control" v-model="url" placeholder="Ссылка на сайт">
+      <button @click="cleanerUrl" class="btn btn-primary">Clean URL</button>
 
-</div>
-
-   </form>
 
   </div>
 
-  <script>
-
-     var app = new Vue({
-      el: '#app',
-      data: {
-        model: '',
-        counter: 100,
-        name: '',
-        email: ''
-
-      },
-       methods: {
-     
-    getMessage () {
-      alert('Здравствуйте, '+ this.name+'!'+ ' На Вашу почту '+ this.email+', отправлен бесплатный курс программирования.')
-    }
-  }
-    })
+</div>
 
 
-  </script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
